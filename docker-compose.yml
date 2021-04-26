@@ -1,0 +1,26 @@
+version: "3.7"
+services: 
+  u1:
+    image: redis
+    container_name: u1
+    networks: 
+      - n1
+  u2:
+    image: redis
+    container_name: u2
+    networks:
+      - n1
+      - n2
+  u3:
+    image: redis
+    container_name: u3
+  u4:
+    image: redis
+    container_name: u4
+    networks:
+      - n2
+networks:
+  n1:
+    driver: bridge
+  n2:
+    driver: bridge
